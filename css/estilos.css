@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Antonio';
+  src: url('../assets/fonts/Antonio-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../assets/fonts/SourceSerif4-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+:root {
+  --vinotinto: #8A3D33;
+  --texto: #222;
+  --fondo: #f4f3f1;
+  --borde: #d9d6d0;
+  font-family: system-ui, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+header { padding: 24px 32px 8px; }
+
+h1 { margin: 0; font-size: 22px; }
+
+.subtitulo {
+  margin: 4px 0 0;
+  color: var(--vinotinto);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px 32px 48px;
+  align-items: flex-start;
+}
+
+.panel-controles {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.campo { display: flex; flex-direction: column; gap: 6px; }
+
+.campo > label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.campo > label.check { display: flex; gap: 8px; align-items: center; font-weight: 400; }
+
+input[type="text"], input[type="file"], textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+textarea { resize: vertical; }
+
+input[type="range"] { width: 100%; }
+
+.segmentado { display: flex; gap: 12px; font-size: 14px; }
+
+.botones { display: flex; flex-direction: column; gap: 10px; }
+
+button {
+  background: var(--vinotinto);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(1.08); }
+
+.estado { min-height: 18px; font-size: 13px; color: #666; margin: 0; }
+
+.panel-preview { flex: 1 1 380px; display: flex; justify-content: center; }
+
+.preview-wrap {
+  width: 100%;
+  max-width: 460px;
+  border: 1px solid var(--borde);
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.preview-wrap.arrastrando { cursor: grabbing; }
+
+#canvas-preview { display: block; width: 100%; height: auto; }
